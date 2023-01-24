@@ -4,17 +4,14 @@ import io
 import shutil
 from datetime import date
 import torch
-import matplotlib.pyplot as plt
 from PIL import Image
 import os
-from tqdm.notebook import tqdm
 from typing import Optional, List
 from fastapi import FastAPI, Request, File, UploadFile
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi import FastAPI, File, Form, UploadFile
-from scipy import interpolate, pi
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -46,7 +43,7 @@ def distance(embeddings1, embeddings2, distance_metric=0):
         dot = np.sum(np.multiply(embeddings1, embeddings2), axis=1)
         norm = np.linalg.norm(embeddings1, axis=1) * np.linalg.norm(embeddings2, axis=1)
         similarity = dot / norm
-        dist = np.arccos(similarity) / pi
+        dist = np.arccos(similarity) / np.pi
     else:
         raise 'Undefined distance metric %d' % distance_metric
     return dist
