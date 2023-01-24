@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+facenet_pytorch
+python-multipart
