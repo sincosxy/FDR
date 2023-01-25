@@ -2,3 +2,7 @@ fastapi
 uvicorn
 facenet_pytorch
 python-multipart
+jinja2
+numpy
+Pillow
+torch

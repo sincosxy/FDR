@@ -1,3 +1,4 @@
+/env/
 /groups/
 /faces/
-__pycache__
+/__pycache__/
