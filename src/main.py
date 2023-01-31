@@ -159,7 +159,7 @@ def predict_all():
     
 
 
-@app.get("/sort")    
+@app.get("/sort/")    
 async def sort_photos(path: str):
     if path == '':
         today = date.today()
@@ -187,7 +187,7 @@ async def sort_photos(path: str):
     return {"count": len(photolist), "people": people}
 
     
-@app.post("/uploadancor")
+@app.post("/uploadancor/")
 async def uploadancor(file: bytes = File(), email: str = Form()):
     today = date.today()
     d3 = today.strftime("%y%m%d")
